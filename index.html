@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <!-- Header section -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-nav  justify-spacebetween">
+                <!-- Logo-->
+                <div class="logo">
+                    <a href="index.html">wokiee</a>
+                    
+                </div>
+                <!-- End logo -->
+                
+                <!-- Menu-->
+                <ul class="menu">
+                    <li class="item">
+                        <a href="index.html" class="active">Home</a>
+                    </li>
+                    <li class="item">
+                        <a  data-link="product" href="#products">products</a>
+                    </li>
+                      <li class="item">
+                        <a  data-link="services" href="#services">services</a>
+                    </li>
+                    <li class="item">
+                        <a href="about.html">About</a>
+                    </li>
+                    <li class="item">
+                        <a href="contactus.html">Contact us</a>
+                    </li>
+                </ul>
+                
+                <!-- Cart icon-->
+                <div class="cart" id="togglecart">
+                    <i class="fa fa-lg fa-shopping-cart" ></i>
+                    <span class="count" id="count-products"></span>
+                    <ul class="cart-details d-flex-cloumn" id="cart-container">
+                        <!-- Created with js-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+            <div class="chevron-top" id="chevron-top"><i class="fas fa-chevron-up"></i></div>
+
+    <!-- Main section-->
+    <main class="main" id="main-section">
+        <div class="slider">
+            <div class="slider-content d-flex justify-center align-center active">
+                <div class="intro text-center">
+                    <h1 class="title">70% of new collection</h1>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ex modi</p>
+                    <a class="btn btn-buy" href="#">buy now</a>
+                </div>
+            </div>
+      
+            <!-- First item-->
+            <div class="slider-content d-flex justify-center align-center ">
+                <div class="intro text-center">
+                    <h1 class="title">70% of new collection</h1>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ex modi</p>
+                    <a class="btn btn-buy" href="#">buy now</a>
+                </div>
+            </div>
+            <!-- end item-->
+           
+            <!-- First item -->
+            <div class="slider-content d-flex justify-center align-center">
+                <div class="intro text-center">
+                    <h1 class="title">70% of new collection</h1>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ex modi</p>
+                    <a class="btn btn-buy" href="#">buy now</a>
+                </div>
+            </div>
+            <!-- end item -->
+           
+            <!-- Chevrons -->
+            <div class="chevrons d-flex justify-spacebetween">
+                <span class="chevron-left"  id="chevron-left"><i class="fa fa-chevron-left"></i></span>
+                <span class="chevron-right" id="chevron-right"><i class="fa fa-chevron-right"></i></span>
+            </div>
+            <!-- End chevrons-->
+            <div class="next-section" id="next-section" data-next="ourservices">
+                <i class="fa fa-chevron-down"></i>
+            </div>
+    </main>
+    <!-- end mainsection-->
+    
+    <section class="ourservices" id="services">
+        <div class="container">
+            <h2 class="title-heading">our services</h2>
+            <p class="description">ar far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p>
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="icon">
+                                <i class="fa fa-headphones fa-3x"></i>
+                            </div>
+                            <h3 class="subtitle">call center solution</h3>
+                        </header> 
+                        <div class="description-box">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque repellendus harum corrupti ut consectetur. Consectetur cum ut incidunt sint similique suscipit soluta facilis ducimus quaerat fugit. Velit dignissimos deserunt cupiditate.</p>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="icon">
+                                <i class="fa fa-smile fa-3x"></i>
+                            </div>
+                            <h3 class="subtitle">satisfied & happy client</h3>
+                        </header> 
+                        <div class="description-box">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque repellendus harum corrupti ut consectetur. Consectetur cum ut incidunt sint similique suscipit soluta facilis ducimus quaerat fugit. Velit dignissimos deserunt cupiditate.</p>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="icon">
+                                <i class="fa fa-truck fa-3x"></i>
+                            </div>
+                            <h3 class="subtitle">Delivery 24/7</h3>
+                        </header> 
+                        <div class="description-box">
+                            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque repellendus harum corrupti ut consectetur. Consectetur cum ut incidunt sint similique suscipit soluta facilis ducimus quaerat fugit. Velit dignissimos deserunt cupiditate.</p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End our services-->
+
+    <!-- our facilites section-->
+    <section class="our-facilites text-center">
+        <div class="container">
+            <h2 class="title-heading">our facilites</h2>
+            <div class="row">
+                <div class="col">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fas fa-award fa-5x"></i>  
+                        </div>
+                        <h3 class="subtitle">planning stage</h3>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam eum accusamus illo officiis autem.
+                        </p>
+                        <div class="learnmore">
+                            <a>learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <div class="icon">
+                            <i class='fa fa-headphones fa-5x'></i>
+                        </div>
+                        <h3 class="subtitle">planning stage</h3>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam eum accusamus illo officiis autem.
+                        </p>
+                        <div class="learnmore">
+                            <a>learn more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="box">
+                        <div class="icon">
+                            <i class="fab fa-apple-pay fa-5x"></i>          
+                        </div>
+                        <h3 class="subtitle">planning stage</h3>
+                        <p class="description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab quam eum accusamus illo officiis autem.
+                        </p>
+                        <div class="learnmore">
+                            <a>learn more</a>
+                        </div>
+                    </div>
+                </div>
+           </div>
+    </section>
+    <!-- Start products-->
+    <section class="products" id="products">
+        <div class="container-fluid">
+            <h2 class="title-heading">the best seller</h2>
+            <ul class="list d-flex">
+                <li class="item">
+                    <a  data-product="all" id="all">all products</a>
+                </li>
+                <li class="item">
+                    <a  data-product="clothes" id="cloth-btn">Clothes</a>
+                </li>
+                <li class="item">
+                    <a  data-product="mobile" id="phone-btn">phones</a>
+                </li>
+                <li class="item">
+                    <a  data-product="laptop" id="laptop-btn">laptop</a>
+                </li>
+                <li class="item">
+                    <a  data-product="watches" id="watch-btn">watches </a>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col all laptop">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/laptop3.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2200<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col all laptop">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/laptop2.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#">Dell Vostro 3500 laptop</a> 
+                            </div>
+                            <div class="price">2500<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col all laptop">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/mac.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#">Dell Vostro 3500 laptop</a> 
+                            </div>
+                            <div class="price">2500<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col all laptop ">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/laptop3.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2200<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col all laptop">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/laptop3.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2200<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col all laptop">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/laptop3.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2200<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Watches-->
+                <div class="col all watches">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/watches.jpeg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">250<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right  addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col all watches">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/watches2.jpeg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">250<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col all watches">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/watches3.jpeg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">250<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col all watches">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/watches2.jpeg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">250<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- phones-->
+                <div class="col all mobile">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/mobile.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2300<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col all mobile">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/mobile2.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2300<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col all mobile">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/mobile3.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2300<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>  
+                
+                <!-- Clothes-->
+                <div class="col all clothes">
+                    <div class="box">
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/clothes1.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2300<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col all clothes">
+                    <div class="box offer">
+                        <div class="offer-details"></div>
+                        <header class="header-box">
+                            <div class="img">
+                                <img src="img/clothes2.jpg" class="img-fluid">
+                            </div>  
+                            <div class="details d-flex justify-center align-center">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-heart"></i>
+                            </div>      
+                        </header>
+                        <div class="content">
+                            <div class="subtitle">
+                                <a href="#"> Vostro 3500 laptop</a>  
+                            </div>
+                            <div class="price">2300<span>egb</span></div>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star    "></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="add-cart float-right addcart-btn"><i class="fa fa-shopping-cart"></i><span>Add to cart</span></div>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            
+        </div>
+    </section>
+    <!-- end best seller-->
+
+    <!-- Start footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="goal">
+                        <h2 class="title">
+                            About <span class="brand">wokiee</span>
+                        </h2>
+                        <div class="description">
+                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, perspiciatis. Optio, pariatur doloribus. Praesentium magnam temporibus voluptas perspiciatis dolore consequatur!
+                        </div>
+                    </div>
+                </div>  
+                <div class="col">
+                    <div class="address">
+                        <h2 class="title">
+                            customer support
+                        </h2>   
+                        <ul class="d-flex-cloumn">
+                            <li class="list-item"> 
+                                <a><i class="fas fa-headset fa-lg"></i>support center</a>
+                            </li>
+                            <li class="list-item">
+                                <a><i class="fa fa-user fa-lg"></i>customer support</a>
+                            </li>
+                            <li class="list-item">
+                                 <a><i class="fas fa-user-shield"></i>privacy policy</a>
+                            </li>
+                            <li class="list-item">
+                                <a><i class="fa fa-envelope fa-lg"></i>contact us</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="latest-product">
+                        <h2 class="title">
+                            latest product
+                        </h2>   
+                        <ul class="d-flex-cloumn">
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/laptop.jpg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">laptop</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/mobile2.jpg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">mobile</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/watches2.jpeg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">watch</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="content float-left">
+                    Safirat &copy; <span> ITI </span> All Right Reserved
+                </div>
+                <div class="social float-right">
+                    <span class="facebook icon">
+                        <a href="https://www.facebook.com/profile.php?id=100076181409145" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    </span>
+                    <span class="google icon">
+                        <a href="mailto:mostafashawky20177@gmail.com"><i class="fab fa-google"></i></a>
+                    </span>
+                    <span class="twitter icon">
+                        <a><i class="fab fa-twitter"></i></a>
+                    </span>
+                    <span class="youtube icon">
+                        <a><i class="fab fa-youtube"></i></a>
+                    </span>
+                </div>
+        </div>     
+    </footer>
+  
+    <script src="js/main.js"></script>
+</body>
+</html>

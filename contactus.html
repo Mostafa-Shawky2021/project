@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="navbar-nav  justify-spacebetween">
+                <!-- Logo-->
+                <div class="logo">
+                    <a href="index.html">wokiee</a>
+                
+                </div>
+                <!-- End logo -->
+                
+                <!-- Menu-->
+                <ul class="menu">
+                    <li class="item">
+                        <a href="index.html" >Home</a>
+                    </li>
+                    <li class="item">
+                        <a href="about.html" >About</a>
+                    </li>
+                    <li class="item">
+                        <a href="index.html">services</a>
+                    </li>
+                    <li class="item">
+                        <a href="index.html">products</a>
+                    </li>
+                    <li class="item">
+                        <a class="active">Contact us</a>
+                    </li>
+                </ul>
+                <!-- Cart icon-->
+                <div class="cart" id="togglecart">
+                    <i class="fa fa-lg fa-shopping-cart" ></i>
+                    <span class="count" id="count-products"></span>
+                    <ul class="cart-details d-flex-cloumn" id="cart-container">
+                        <!-- Created with js-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>  
+    <div class="chevron-top" id="chevron-top"><i class="fas fa-chevron-up"></i></div>
+
+    <!--Mainsection-->
+    <section class="contact-main">
+        <div class="intro d-flex  align-center">
+            <h2 class='title'>contact us</h2>
+        </div>
+    </section>
+    <!-- Endmainsection-->
+
+    <!-- contact content-->
+    <section class="contact-content">
+        <div class="container">
+            <h2 class="title-heading title">keep in touch</h2>
+            <div class="row">
+                <div class="col">
+                    <form action="" class="form-contact" id="contact-form">
+                        <h3 class="subtitle">fill the form it's easy</h3>
+                        <div class="form-group-inline">
+                            <div class="col">
+                                <span class="error">firstname must be greater than 5character</span>
+                                <input type="text" class="input-control validate" name="firstname" id="firsname" placeholder="firstname" autocomplete="off">
+                                <label for="firstname" class="label-control float">Firstname</label>
+                            </div>
+                            <div class="col ">
+                                <span class="error">lastname must be greater than 5character</span>
+                                <input type="text" class="input-control validate " name="lastname" id="lastname" placeholder="lastname" autocomplete="off">
+                                <label for="lastname" class="label-control float" for="lastname">lastname</label>
+                            </div>
+                        </div> 
+                        <div class="form-group w-50">
+                            <span class="error">email must be not empty and valid form </span>
+                            <input class="input-control validate " type="email" name="email" id="email" placeholder="email" autocomplete="off">
+                            <label for="email" class="label-control float">email</label>
+                        </div>
+                        <div class="form-group ">
+                            <span class="error">messag must be not empty and greater than 10 character</span>
+                            <textarea name="message" id="message" class="textarea-control validate" placeholder="message"></textarea>
+                            <label for="message" class="label-control float">message</label>
+                        </div>
+                        <button id="submit" type="submit" class="btn-submit">send message</button>
+                    </form>
+                </div>
+                <div class="col">
+                    <div class="img">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End about content-->
+
+      <!-- Start footer -->
+      <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="goal">
+                        <h2 class="title">
+                            Ecommerce <span class="brand">website</span>
+                        </h2>
+                        <div class="description">
+                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa, perspiciatis. Optio, pariatur doloribus. Praesentium magnam temporibus voluptas perspiciatis dolore consequatur!
+                        </div>
+                    </div>
+                </div>  
+                <div class="col">
+                    <div class="address">
+                        <h2 class="title">
+                            customer support
+                        </h2>   
+                        <ul class="d-flex-cloumn">
+                            <li class="list-item"> 
+                                <a><i class="fas fa-headset fa-lg"></i>support center</a>
+                            </li>
+                            <li class="list-item">
+                                <a><i class="fa fa-user fa-lg"></i>customer support</a>
+                            </li>
+                            <li class="list-item">
+                                 <a><i class="fas fa-user-shield"></i>privacy policy</a>
+                            </li>
+                            <li class="list-item">
+                                <a><i class="fa fa-envelope fa-lg"></i>contact us</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="latest-product">
+                        <h2 class="title">
+                            latest product
+                        </h2>   
+                        <ul class="d-flex-cloumn">
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/laptop.jpg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">laptop</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/mobile2.jpg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">mobile</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+                            <li class="list-item d-flex"> 
+                                <div class="img">
+                                    <img src="img/watches2.jpeg" width="70px">
+                                </div>
+                                <div class="content-item">
+                                    <h3 class="subtitle">watch</h3>
+                                    <p class='description-product'>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+             
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="content float-left">
+                    Safirat &copy; <span>ITI </span>All Right Reserved
+                </div>
+                <div class="social float-right">
+                    <span class="facebook icon">
+                        <a href="https://www.facebook.com/profile.php?id=100076181409145" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+                    </span>
+                    <span class="google icon">
+                        <a href="mailto:mostafashawky20177@gmail.com"><i class="fab fa-google"></i></a>
+                    </span>
+                    <span class="twitter icon">
+                        <a><i class="fab fa-twitter"></i></a>
+                    </span>
+                    <span class="youtube icon">
+                        <a><i class="fab fa-youtube"></i></a>
+                    </span>
+                </div>
+        </div>     
+    </footer>
+  
+    <script src="js/contact.js"></script>
+</body>
+</html>
