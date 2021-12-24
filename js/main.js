@@ -36,8 +36,8 @@ window.onload = function(){
     allProducts.forEach( product =>{ 
         product.style.display = "block"
         product.classList.add('displaysmooth');   
-    })
-
+    });
+    ( localStorage.getItem('products') ) ?  productItem.addProduct( JSON.parse(localStorage.getItem('products')) ) : 0   ;
     showProductincart(  ) 
 }
 
@@ -64,7 +64,7 @@ products.prototype = {
         }
         // product not exist push new one
         if( checkIfproductexit == false) {      
-            this.arrProduct.push(product);  
+            Array.isArray( product ) ?  this.arrProduct.push(...product) : this.arrProduct.push(product);  
             localStorage.setItem('products',JSON.stringify(allProducts));
         } 
         showProductincart(  )
@@ -75,7 +75,14 @@ products.prototype = {
         this.arrProduct = getAll.filter( product => {
             return parseInt(product.productId) !== parseInt(id);    
         })
-        localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
+        if( !(this.arrProduct.length == 0) ) {
+            localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
+
+        } else {
+            localStorage.removeItem('products');
+        }
+     
+
         showProductincart(  )
     },
    //Get all product
@@ -283,12 +290,9 @@ addProductbtn.forEach( addProduct => {
             productPrice,
             quantity,
         }
-     
         // Push new product
         productItem.addProduct(product);
         //Get all data to print it
-
-    
     })
     
 })
@@ -296,7 +300,7 @@ addProductbtn.forEach( addProduct => {
 function showProductincart(  ) {
 
     let products = JSON.parse(localStorage.getItem('products') );
-    if( !(products.length == 0)) {
+    if( products ) {
         countProduct.style.display = "block";
         countProduct.innerHTML = products.length;
         productCartcontainer.innerHTML = "";

@@ -22,13 +22,15 @@ let productCartcontainer = document.getElementById("cart-container");
 let toggleCart           = document.getElementById("togglecart");
 let countProduct         = document.getElementById("count-products");
 let chevronTop           = document.getElementById("chevron-top");
-let formInputs  = Array.from( document.getElementsByClassName("validate"));
-let contactForm = document.getElementById("contact-form");
-let pattEmail   = /^[A-Za-z0-9]+(?:[-).=_(^&*#$%]+[A-Za-z0-9]+)*@\w+(?:[-\.][A-Za-z0-9]+)*\.[A-Za-z]{2,}$/;
+let formInputs           = Array.from( document.getElementsByClassName("validate"));
+let contactForm          = document.getElementById("contact-form");
+let pattEmail            = /^[A-Za-z0-9]+(?:[-).=_(^&*#$%]+[A-Za-z0-9]+)*@\w+(?:[-\.][A-Za-z0-9]+)*\.[A-Za-z]{2,}$/;
+let alphaCharacter       = /^[A-z\s]+$/;
 //Events
 //When page load
+
 window.onload = function(){
-   
+    ( localStorage.getItem('products') ) ?  productItem.addProduct( JSON.parse(localStorage.getItem('products')) ) : 0   ;
     showProductincart(  ) 
 }
 
@@ -47,6 +49,34 @@ chevronTop.addEventListener("click",function(){
     window.scrollTo(0,0);
 })
 
+
+//Attach delete cart button
+document.body.addEventListener('click', function(e){
+    if( e.target.classList.contains("delete-btn") ) {
+       let productId = e.target.parentElement.querySelector(".product-id").innerHTML;
+       
+       // Remove from object
+       productItem.deleteProduct(productId);
+        
+       // remove from dom
+       e.target.parentElement.remove();
+       showProductincart(  ) 
+
+     }
+ })
+ 
+ /* toggle Cart */
+ toggleCart.addEventListener('click',function(){
+    if( productCartcontainer.children.length > 0) {
+        productCartcontainer.classList.toggle("display");
+    } else {
+
+        productCartcontainer.classList.toggle("display");
+
+        productCartcontainer.innerHTML = "<span style='color:#6c6c6c;fontWeight:bold;fontSize:0.7rem'>sorry there is no product in cart</span>"
+    }
+})
+// Products prototype function
 // Products prototype function
 products.prototype = {
     
@@ -70,7 +100,7 @@ products.prototype = {
           }
           // product not exist push new one
           if( checkIfproductexit == false) {      
-              this.arrProduct.push(product);  
+              Array.isArray( product ) ?  this.arrProduct.push(...product) : this.arrProduct.push(product);  
               localStorage.setItem('products',JSON.stringify(allProducts));
           } 
           showProductincart(  )
@@ -78,10 +108,18 @@ products.prototype = {
      //Delete product
      deleteProduct:function( id ){  
           let getAll = this.getAllproduct();
+          console.log( getAll );
           this.arrProduct = getAll.filter( product => {
               return parseInt(product.productId) !== parseInt(id);    
           })
-          localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
+          if( !(this.arrProduct.length == 0) ) {
+              localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
+  
+          } else {
+              localStorage.removeItem('products');
+          }
+       
+  
           showProductincart(  )
       },
      //Get all product
@@ -89,102 +127,8 @@ products.prototype = {
          return this.arrProduct;
      }
   }
-  //Constructor to handle carts data
-  function products( ){
-      this.arrProduct = [];
-  }
-//Constructor to handle carts data
-function products( ){
-    this.arrProduct = [];
-}
 
 
-//Attach delete cart button
-document.body.addEventListener('click', function(e){
-    if( e.target.classList.contains("delete-btn") ) {
-       let productId = e.target.parentElement.querySelector(".product-id").innerHTML;
-       
-       // Remove from object
-       productItem.deleteProduct(productId);
-       
-       // remove from dom
-       e.target.parentElement.remove();
-       showProductincart(  ) 
-       
-     }
- })
- 
- /* toggle Cart */
- toggleCart.addEventListener('click',function(){
-    if( productCartcontainer.children.length > 0) {
-        productCartcontainer.classList.toggle("display");
-    } else {
-
-        productCartcontainer.classList.toggle("display");
-
-        productCartcontainer.innerHTML = "<span style='color:#6c6c6c;fontWeight:bold;fontSize:0.7rem'>sorry there is no product in cart</span>"
-    }
-})
-// Products prototype function
-products.prototype = {
-    
-    // Add new product
-   addProduct:function( product ){
-        let allProducts        = this.getAllproduct();
-        let checkIfproductexit = false;
-   
-        
-        if( allProducts.length > 0 ) {
-            allProducts.forEach( productOld => {
-                if( productOld.productId == product.productId ) {
-                    productOld.quantity++;
-                    checkIfproductexit = true;
-                }  
-            })
-        }
-        if( checkIfproductexit == false) {
-            this.arrProduct.push(product);
-        } 
-   },
-   //Delete product
-   deleteProduct:function( id ){
-
-        let getAll = this.getAllproduct();
-        
-        let newProduct = getAll.filter( product => {
-            return product.productId != id
-    
-        });
-
-        //Set new data of localdata storage
-        if(localStorage.length != 0) {
-            localStorage.setItem("products", JSON.stringify(newProduct));
-            showProductincart(  )
-            
-        } 
-    
-    },
-   //Get all product
-   getAllproduct:function(){
-       return this.arrProduct;
-   }
-}
-function products( ){
-    this.arrProduct = [];
-}
-
-document.body.addEventListener('click', function(e){
-
-    // Get delete button to delete specific cart
-   if( e.target.classList.contains("delete-btn") ) {
-     let productId = e.target.parentElement.querySelector(".product-id").innerHTML;
-     // Remove from object
-     productItem.deleteProduct(productId);
-     // remove from dom
-      e.target.parentElement.remove();
-      
-   }
-})
 allProducts.forEach( (product,index)=> {
     let idSpan = document.createElement('span');
         idSpan.classList.add('id-product');
@@ -193,61 +137,56 @@ allProducts.forEach( (product,index)=> {
         product.appendChild(idSpan);
         
 })
+
+function products( ){
+    this.arrProduct = [];
+}
+
 let productItem = new products();
-
-
- // Add product in cart
- addProductbtn.forEach( addProduct => {
+// Loop through every product and register click click event 
+addProductbtn.forEach( addProduct => {
     addProduct.addEventListener("click",function(){
-            let productId    = this.parentElement.parentElement.parentElement.children[1].textContent;
-            let productName  = this.parentElement.querySelector(".subtitle a").textContent;
-            let productImage = this.parentElement.parentElement.querySelector(".header-box .img img").getAttribute("src")
-            let productPrice = this.parentElement.querySelector(".price").textContent;
-            let quantity     = 1;
-            
-            let product = {
-                productId,
-                productName,
-                productImage,
-                productPrice,
-                quantity,
-            }
-
-            // Push new product
-            productItem.addProduct(product);
-            
-            // localstorage object to keep data in user machine
-            let allProducts = productItem.getAllproduct();
-
-          
-            window.localStorage.setItem( 'products', JSON.stringify(allProducts) );
-            showProductincart();
+        let productId    = this.parentElement.parentElement.parentElement.children[1].textContent;
+        let productName  = this.parentElement.querySelector(".subtitle a").textContent;
+        let productImage = this.parentElement.parentElement.querySelector(".header-box .img img").getAttribute("src")
+        let productPrice = this.parentElement.querySelector(".price").textContent;
+        let quantity     = 1;
+        
+        // Product details
+        let product = {
+            productId,
+            productName,
+            productImage,
+            productPrice,
+            quantity,
+        }
+        // Push new product
+        productItem.addProduct(product);
+        //Get all data to print it
     })
     
 })
-
+// Validate inputs form on blur event
 formInputs.forEach( formInput => formInput.addEventListener('blur',checkValidateblur) );
+// Validate on submit event
 contactForm.addEventListener( 'submit',function(e){
     formInputs.forEach( formInput => {
-        //fname
+        //fname validation
         if( formInput.name == 'firstname' ) {
-            
             // Check if fname is valid
-            if( formInput.value.length < 5 ) {
+            if( formInput.value.length < 5 || alphaCharacter.test( formInput.value ) == false) {
                 formInput.parentElement.querySelector('.error').classList.add('display');
                 formInput.style.border = "1px solid #f00";
-                e.preventDefault();
+                e.preventDefault(); 
             } else {
                 formInput.parentElement.querySelector('.error').classList.remove('display');
                 formInput.style.border = "1px solid #878787";
-
             }
         }
-        //lname
+        //lname validation
         if( formInput.name == 'lastname' ) {
-    
-            // Check if fname is valid
-            if( formInput.value.length < 5 ) {
+            // Check if lname is valid
+            if( formInput.value.length < 5 || alphaCharacter.test( formInput.value ) == false) {
                 formInput.parentElement.querySelector('.error').classList.add('display');
                 formInput.style.border = "1px solid #f00";
                 e.preventDefault();
@@ -320,10 +259,9 @@ addProductbtn.forEach( addProduct => {
 function checkValidateblur( e ) {
     
     if( e.target.name == "firstname"  ) {
-
         let fname = e.target;
         // Check if fname is valid
-        if( fname.value.length < 5 ) {
+        if( fname.value.length < 5 || alphaCharacter.test( fname.value ) == false ) {
             fname.parentElement.querySelector('.error').classList.add('display');
             fname.style.border = "1px solid #f00";
         } else {
@@ -335,7 +273,7 @@ function checkValidateblur( e ) {
 
         let lname = e.target;
         // Check if lname is valid
-        if( lname.value.length < 5 ) {
+        if( lname.value.length < 5 || alphaCharacter.test( lname.value ) == false    ) {
             lname.parentElement.querySelector('.error').classList.add('display');
             lname.style.border = "1px solid #f00";
         } else {
@@ -381,7 +319,8 @@ function checkValidateblur( e ) {
 function showProductincart(  ) {
 
     let products = JSON.parse(localStorage.getItem('products') );
-    if( !(products.length == 0)) {
+    
+    if( products ) {
         countProduct.style.display = "block";
         countProduct.innerHTML = products.length;
         productCartcontainer.innerHTML = "";
@@ -427,4 +366,4 @@ function showProductincart(  ) {
         countProduct.style.display = "none";
     }
          
-}   
+}

@@ -35,7 +35,8 @@ window.addEventListener('scroll',function(){
 
  //When page load
 window.onload = function(){
-    
+
+    ( localStorage.getItem('products') ) ?  productItem.addProduct( JSON.parse(localStorage.getItem('products')) ) : 0   ;
     showProductincart(  ) 
 }
 
@@ -62,20 +63,26 @@ products.prototype = {
           }
           // product not exist push new one
           if( checkIfproductexit == false) {      
-              this.arrProduct.push(product);  
-              localStorage.setItem('products',JSON.stringify(allProducts));
+            Array.isArray( product ) ?  this.arrProduct.push(...product) : this.arrProduct.push(product);  
+            localStorage.setItem('products',JSON.stringify(allProducts));
           } 
-          showProductincart(  )
+            showProductincart(  )
      },
-     //Delete product
-     deleteProduct:function( id ){  
-          let getAll = this.getAllproduct();
-          this.arrProduct = getAll.filter( product => {
-              return parseInt(product.productId) !== parseInt(id);    
-          })
-          localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
-          showProductincart(  )
-      },
+      //Delete product
+   deleteProduct:function( id ){  
+    let getAll = this.getAllproduct();
+    this.arrProduct = getAll.filter( product => {
+        return parseInt(product.productId) !== parseInt(id);    
+    })
+    if( !(this.arrProduct.length == 0) ) {
+        localStorage.setItem('products',JSON.stringify(this.arrProduct)); 
+
+    } else {
+        localStorage.removeItem('products');
+    }
+
+    showProductincart(  )
+    },
      //Get all product
      getAllproduct:function(){
          return this.arrProduct;
@@ -115,49 +122,8 @@ document.body.addEventListener('click', function(e){
      }
  })
  
-products.prototype = {
-    
-    addProduct:function( product ){
- 
-         let allProducts        = this.getAllproduct();
-         let checkIfproductexit = false;
-         allProducts.forEach( productOld => {
-             if( productOld.productId == product.productId ) {
-                 productOld.quantity++;
-                 checkIfproductexit = true;
-             } 
-             
-         })
-         if( checkIfproductexit == false) {
-             this.arrProduct.push(product);
-         } 
-         
- 
-    },
-    deleteProduct:function( id){
-     
-        let getAll = this.getAllproduct();
-        
-        let newProduct = getAll.filter( product => {
-            return product.productId != id
-    
-        });
 
-        //Set new data of localdata storage
-        if(localStorage.length != 0) {
-            localStorage.setItem("products", JSON.stringify(newProduct));
-            showProductincart(  )
-            
-        } 
-    },
-    getAllproduct:function(){
-        return this.arrProduct;
-    }
- }
- function products( ){
-    this.arrProduct = [];
-}
-    
+
 
 // Prevent propgation
 productCartcontainer.addEventListener('click',function(e){
@@ -217,7 +183,7 @@ addProductbtn.forEach( addProduct => {
 function showProductincart(  ) {
 
     let products = JSON.parse(localStorage.getItem('products') );
-    if( !(products.length == 0)) {
+    if( products ) {
         countProduct.style.display = "block";
         countProduct.innerHTML = products.length;
         productCartcontainer.innerHTML = "";
